@@ -5,16 +5,12 @@ window.addEventListener("DOMContentLoaded", () => {
   const canvas = document.getElementById("gameCanvas");
   const ctx = canvas.getContext("2d");
 
-  // Game state
   let ball = { x: 300, y: 0, radius: 15, dy: 4 };
   let player = { x: 250, y: 0, width: 100, height: 10, dx: 6 };
   let leftPressed = false, rightPressed = false;
   let score = 0;
   let bestScore = localStorage.getItem("bestScore") || 0;
   let gameRunning = false;
-
-  ctx.font = "20px Arial";
-  ctx.fillStyle = "#000";
 
   function resizeCanvas() {
     canvas.width = window.innerWidth;
@@ -53,13 +49,14 @@ window.addEventListener("DOMContentLoaded", () => {
     ctx.closePath();
 
     // Draw player
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "black";
     ctx.fillRect(player.x, player.y, player.width, player.height);
 
-    // Draw scores
+    // Draw scores with larger font
+    ctx.font = "bold 40px Arial";
     ctx.fillStyle = "black";
-    ctx.fillText(`Score: ${score}`, 20, 30);
-    ctx.fillText(`Best: ${bestScore}`, 20, 60);
+    ctx.fillText(`Score: ${score}`, 20, 50);
+    ctx.fillText(`Best: ${bestScore}`, 20, 100);
 
     // Check catch
     if (
@@ -87,12 +84,10 @@ window.addEventListener("DOMContentLoaded", () => {
 
   function gameOver() {
     gameRunning = false;
-
     if (score > bestScore) {
       bestScore = score;
       localStorage.setItem("bestScore", bestScore);
     }
-
     alert(`Game Over!\nYour Score: ${score}\nBest Score: ${bestScore}`);
     quitGame();
   }
@@ -119,13 +114,13 @@ window.addEventListener("DOMContentLoaded", () => {
   playButton.addEventListener("click", startGame);
   quitButton.addEventListener("click", quitGame);
 
-  // === Mobile controls ===
+  // Mobile controls
   const mobileControls = document.createElement("div");
   mobileControls.id = "mobileControls";
   mobileControls.style.display = "none";
   mobileControls.innerHTML = `
-    <button id="leftButton">◀</button>
-    <button id="rightButton">▶</button>
+    <button id="leftButton"></button>
+    <button id="rightButton"></button>
   `;
   document.body.appendChild(mobileControls);
 
