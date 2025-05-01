@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Code website</title>
-  <link rel="stylesheet" href="static/web.css">
+  <link rel="stylesheet" href="static/css-practice.css">
   <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
   <style>
@@ -21,7 +21,26 @@
 </head>
 
 <body>
-  <div class="content"><b>I POST ALL MY CODES HERE!</b></div>
+
+<div id="intro">
+    <img id="introImage" src="static/catch the ball.jpg" style="position: absolute;
+  top: 75px;
+  left: 25%;
+  width: 100px;
+  height: 100px;
+border-radius: 10px;
+border-color: black;" alt="Catch The Ball Intro Image" />
+    <button id="playButton">Play</button>
+  </div>
+
+  <!-- Canvas for the game (fills the entire screen) -->
+  <canvas id="gameCanvas"></canvas>
+
+  <!-- Quit button (hidden initially) -->
+  <button id="quitButton" style="display: none;">Quit</button>
+
+  <script src="script.js"></script>
+  <div class="content"><b>I POST ALL MY CODE HERE!</b></div>
 
   <!-- First Card -->
   <div class="card">
@@ -170,5 +189,7 @@ pygame.quit()
 
   <!-- Your External JavaScript File -->
   <script src="static/card.js.js"></script>
+
+
 </body>
 </html>
