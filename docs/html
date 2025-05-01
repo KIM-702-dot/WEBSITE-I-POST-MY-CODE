@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Code website</title>
+  <link rel="stylesheet" href="static/css-practice.css">
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism.css" rel="stylesheet" />
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.js"></script>
+  <style>
+    .card-content, .card-content1 {
+      max-height: 200px;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .card.expanded .card-content,
+    .card1.expanded .card-content1 {
+      max-height: 1000px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="content"><b>I POST ALL MY CODE HERE!</b></div>
+
+  <!-- First Card -->
+  <div class="card">
+    <button class="copy-button">Copy</button>
+    <div class="card-title">MULTO CODE</div>
+    <div class="card-content">
+      <pre><code class="language-python">
+import time
+import sys
+
+def type_animate(text, delay=0.1):
+    """Function to animate typing each character"""
+    for char in text:
+        sys.stdout.write(char)
+        sys.stdout.flush()
+        time.sleep(delay)
+    print()
+
+def generate_post_chorus():
+    post_chorus_lines = [
+        "'Di mo ba ako lilisanin?",
+        "Hindi pa ba sapat pagpapahirap sa 'kin? (Damdamin ko)",
+        "Hindi na ba ma-mamamayapa?",
+        "Hindi na ba ma-mamamayapa?",
+        "KIM GWAPO!",
+    ]
+
+    # Delays (to match song timing)
+    delays = [1.5, 0.1, 1.5, 1.5, 2.5]
+
+    for line, delay in zip(post_chorus_lines, delays):
+        type_animate(line)
+        time.sleep(delay)
+
+if __name__ == "__main__":
+    generate_post_chorus()
+      </code></pre>
+    </div>
+    <button class="toggle-button">Show More</button>
+  </div>
+
+  <!-- Second Card -->
+  <div class="card1 card">
+    <button class="copy-button">Copy</button>
+    <div class="card-title">Catch the ball game</div>
+    <div class="card-content1">
+      <pre><code class="language-python">
+import pygame
+import random
+
+# Initialize Pygame
+pygame.init()
+
+# Screen settings
+WIDTH, HEIGHT = 600, 400
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Catch the Ball")
+
+# Colors
+WHITE = (255, 255, 255)
+BLUE = (50, 50, 255)
+RED = (255, 50, 50)
+BLACK = (0, 0, 0)
+
+# Game variables
+player_width, player_height = 100, 20
+player_x = (WIDTH - player_width) // 2
+player_y = HEIGHT - player_height - 10
+player_speed = 7
+
+ball_radius = 15
+ball_x = random.randint(ball_radius, WIDTH - ball_radius)
+ball_y = -ball_radius
+ball_speed = 5
+
+score = 0
+font = pygame.font.SysFont(None, 36)
+
+clock = pygame.time.Clock()
+running = True
+
+while running:
+    screen.fill(WHITE)
+
+    # Event handling
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+
+    # Player movement
+    keys = pygame.key.get_pressed()
+    if keys[pygame.K_LEFT] and player_x > 0:
+        player_x -= player_speed
+    if keys[pygame.K_RIGHT] and player_x < WIDTH - player_width:
+        player_x += player_speed
+
+    # Ball movement
+    ball_y += ball_speed
+
+    # Catching the ball
+    if (player_y < ball_y + ball_radius < player_y + player_height) and \
+       (player_x < ball_x < player_x + player_width):
+        score += 1
+        ball_y = -ball_radius
+        ball_x = random.randint(ball_radius, WIDTH - ball_radius)
+
+    # Missed ball
+    if ball_y > HEIGHT:
+        ball_y = -ball_radius
+        ball_x = random.randint(ball_radius, WIDTH - ball_radius)
+
+    # Drawing
+    pygame.draw.rect(screen, BLUE, (player_x, player_y, player_width, player_height))
+    pygame.draw.circle(screen, RED, (ball_x, ball_y), ball_radius)
+    score_text = font.render(f"Score: {score}", True, BLACK)
+    screen.blit(score_text, (10, 10))
+
+    pygame.display.flip()
+    clock.tick(60)
+
+pygame.quit()
+      </code></pre>
+    </div>
+    <button class="toggle-button">Show More</button>
+  </div>
+
+  <!-- Sidebar and Header Stuff -->
+  <div class="header"></div>
+  <input type="checkbox" class="toggleSidebarMenu" id="toggleSidebarMenu">
+  <label for="toggleSidebarMenu" class="sidebarToggleIcon">
+    <div class="bar diagonal part-1"></div>
+    <div class="bar horizontal"></div>
+    <div class="bar diagonal part-2"></div>
+  </label>
+
+  <div id="sidebarMenu">
+    <ul class="sidebarMenuContent">
+      <li>KIm baricog <span>Web Developer</span></li>
+      <li><a href="#" target="_blank">FaceBook</a></li>
+      <li><a href="#" target="_blank">Instagram</a></li>
+      <li><a href="#" target="_blank">Gmail</a></li>
+    </ul>
+  </div>
+
+  <!-- Your External JavaScript File -->
+  <script src="static/card.js.js"></script>
+</body>
+</html>
