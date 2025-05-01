@@ -156,9 +156,9 @@ input[type="checkbox"]:checked ~ #sidebarMenu {
     background: white;
     width: 180px; /* Adjusted width */
     height: auto; /* Adjusted height */
-    top: 200px;
+    top: 600px;
     border-radius: 10px;
-    left: 25%;
+    left: 5%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-style: oblique;
     font-weight: 500;
