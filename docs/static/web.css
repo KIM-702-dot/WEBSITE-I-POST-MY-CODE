@@ -228,15 +228,15 @@ button:hover {
     font-size: 18px;
     cursor: pointer;
     position: absolute;
-    top: 170px;
+    top: 250px;
     width: 100px;
-    left: 25%;
+    left: 75%;
 }
 #quitButton {
   display: none;  /* Hidden initially */
   position: absolute;
   top: 200px;
-  left: 40%;
+  left: 60%;
   padding: 10px 20px;
   font-size: 1.1rem;
   cursor: pointer;
@@ -253,7 +253,7 @@ button:hover {
   position: absolute;
   top: 200px;
   left: 30%;
-  width: 30%;
+  width: 40%;
   height: 50%;
   background-color: #f0f0f0;
   border: 2px solid #333;
@@ -263,8 +263,8 @@ button:hover {
 /* Center the intro image and button */
 #intro {
   position: absolute;
-  top: 200px;
-  left: 25%;
+  top: 950px;
+  left: 3%;
   width: 100px;
   height: 50px;
 }
