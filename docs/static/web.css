@@ -211,3 +211,60 @@ button:hover {
     font-weight: 500;
     padding: 10px; /* Adjusted padding */
 }
+#gameCanvas {
+  display: none;  /* Hidden initially */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  z-index: 1;
+}
+
+#playButton {
+    padding: 10px 20px;
+    font-size: 18px;
+    cursor: pointer;
+    position: absolute;
+    top: 170px;
+    width: 100px;
+    left: 25%;
+}
+#quitButton {
+  display: none;  /* Hidden initially */
+  position: absolute;
+  top: 200px;
+  left: 40%;
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: #f44336; /* Red background */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  z-index: 3;
+  width: 100px;
+
+}
+#gameCanvas {
+  display: none;  /* Hidden initially */
+  position: absolute;
+  top: 200px;
+  left: 30%;
+  width: 30%;
+  height: 50%;
+  background-color: #f0f0f0;
+  border: 2px solid #333;
+  z-index: 1;
+}
+
+/* Center the intro image and button */
+#intro {
+  position: absolute;
+  top: 200px;
+  left: 25%;
+  width: 100px;
+  height: 50px;
+}
