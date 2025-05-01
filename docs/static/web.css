@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:wght@300;400;600');
+
+.header {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+    max-width: 100%;
+    box-shadow: none;
+    background-color: rgb(9, 76, 139);
+    position: fixed;
+    height: 70px;
+    overflow: hidden;
+    z-index: 10;
+    left: 0px;
+    top: 0px;
+}
+
+body {
+    background: rgb(14, 130, 165);
+}
+
+#sidebarMenu {
+    height: 100%;
+    position: fixed;
+    left: 0;
+    width: 250px;
+    margin-top: 60px;
+    transform: translateX(-250px);
+    transition: transform 250ms ease-in-out;
+    background: rgb(35, 62, 129);
+}
+
+.sidebarToggleIcon {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    cursor: pointer;
+    position: absolute;
+    z-index: 99;
+    height: 100%;
+    width: 100%;
+    top: 22px;
+    left: 15px;
+    height: 22px;
+    width: 22px;
+}
+
+.bar {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: absolute;
+    height: 3px;
+    width: 100%;
+    background-color: #fff;
+}
+
+.diagonal.part-1 {
+    position: relative;
+    transition: all 0.3s;
+    box-sizing: border-box;
+    float: left;
+}
+
+.horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+.diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    position: relative;
+    float: left;
+    margin-top: 3px;
+}
+
+input[type=checkbox]:checked ~ .sidebarToggleIcon > .horizontal {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    opacity: 0;
+}
+
+input[type=checkbox]:checked ~ .sidebarToggleIcon > .diagonal.part-1 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(135deg);
+    margin-top: 8px;
+}
+
+input[type=checkbox]:checked ~ .sidebarToggleIcon > .diagonal.part-2 {
+    transition: all 0.3s;
+    box-sizing: border-box;
+    transform: rotate(-135deg);
+    margin-top: -9px;
+}
+
+input[type=checkbox] {
+    transition: all 0.5s;
+    box-sizing: border-box;
+    display: none;
+}
+
+input[type="checkbox"]:checked ~ #sidebarMenu {
+    transform: translateX(0);
+}
+
+.sidebarMenuContent li span {
+    display: block;
+    font-size: 14px;
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.sidebarMenuContent li a {
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.sidebarMenuContent {
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid rgba(159, 10, 10, 0.1);
+}
+
+.sidebarMenuContent li {
+    list-style: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px;
+    cursor: pointer;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+
+.content {
+    font-size: larger;
+    position: absolute;
+    top: 15%;
+    left: 40%;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffe7e7;
+    font-weight: 1000;
+    background: white;
+    color: black;
+    width: 300px;
+    border-radius: 10px;
+
+}
+
+.card {
+    position: absolute;
+    background: white;
+    width: 180px; /* Adjusted width */
+    height: auto; /* Adjusted height */
+    top: 200px;
+    border-radius: 10px;
+    left: 25%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    font-weight: 500;
+    padding: 10px; /* Adjusted padding */
+}
+
+.card-title {
+    font-size: 1rem; /* Adjusted title size */
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.card-content {
+    overflow: hidden;
+    max-height: 100px;  /* Set initial short height */
+    transition: max-height 0.3s ease-in-out;
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+.card1 .card-content1 {
+    max-height: 200px; /* Set initial short height */
+    transition: max-height 0.3s ease-in-out;
+}
+.card1 {
+    position: absolute;
+    background: white;
+    width: 180px; /* Adjusted width */
+    height: auto; /* Adjusted height */
+    top: 200px;
+    border-radius: 10px;
+    left: 100px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: oblique;
+    font-weight: 500;
+    padding: 10px; /* Adjusted padding */
+}
